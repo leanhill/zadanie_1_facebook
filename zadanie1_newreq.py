@@ -15,26 +15,17 @@ Proszę dać znać czy to jest jasne:) jak już się uda - proszę podesłać li
 """
 def get_facebook_likeit_description(names):
     if bool(names) == False:
-        print("Nikt tego nie lubi")
-    elif len(names) == 1 and names[0] == "Piotr":
-        print("Piotr lubi to!")
+        return ("Nikt tego nie lubi")
+    elif len(names) == 1:
+        return (f"{names[0]} lubi to!")
     elif len(names) == 2:
-        names = set(names)
-        if bool(names - {"Piotr", "Ania"}) == False:
-            print("Piotr i Ania lubią to")
+        return (f"{names[0]} i {names[1]} lubią to!")
     elif len(names) == 3:
-        names = set(names)
-        if bool(names - {"Piotr", "Ania", "Marek"}) == False:
-            print("Piotr, Ania i Marek lubią to")
+        return (f"{names[0]}, {names[1]} i {names[2]} lubią to!")
     elif len(names) == 4:
-        a = set(names[0:2])
-        if bool(a - {"Piotr", "Ania"}) == False: #tu założyłem, że nie ma znaczenia czy Piotr jest jako pierwszy czy Ania. Jezeli jednak chciales by to mialo znacznie to po prostu bym sprawdzil po kolei pozycje listy
-            print("Piotr, Ania i 2 inne osoby lubią to")
+        return (f"{names[0]}, {names[1]} i 2 inne osoby lubią to!")
     elif len(names) > 4:
-        a = set(names[0:2])
-        if bool(a - {"Piotr", "Ania"}) == False: #tu założyłem, że nie ma znaczenei czy Piotr jest jako pierwszy czy Ania. Jezeli jednak chciales by to mialo znacznie to po prostu bym sprawdzil po kolei pozycje listy
-            print("Piotr, Ania i %d inne osoby lubią to" % len(names))
-    return
+        return (f"{names[0]}, {names[1]} i {len(names)-2} inne osoby lubią to!")
 
 
 
